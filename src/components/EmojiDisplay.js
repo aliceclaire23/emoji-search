@@ -1,11 +1,13 @@
 import React from 'react';
 
-const EmojiDisplay = ({ emojis }) => {
+const EmojiDisplay = ({ emojis, search }) => {
   return (
     <section>
-      {emojis.map((emoji, i) => (
-        <span key={i}>{emoji.symbol}</span>
-      ))}
+      {emojis
+        .filter(emoji => emoji.keywords.includes(search))
+        .map((emoji, i) => (
+          <span key={i}>{emoji.symbol}</span>
+        ))}
     </section>
   );
 };

@@ -3,7 +3,7 @@ import React from 'react';
 const EmojiSearch = () => {
   return (
     <form>
-      <input type='text' />
+      <input id='search' type='text' />
       <button type='submit'>Search</button>
     </form>
   );

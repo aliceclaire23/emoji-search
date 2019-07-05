@@ -6,14 +6,14 @@ import EmojiDisplay from './components/EmojiDisplay';
 import emojis from './emojis.json';
 
 class App extends React.Component {
-  state = { emojis };
+  state = { emojis, search: '' };
 
   render() {
     return (
       <div className='App'>
         <Heading />
         <EmojiSearch />
-        <EmojiDisplay emojis={this.state.emojis} />
+        <EmojiDisplay emojis={this.state.emojis} search={this.state.search} />
       </div>
     );
   }
