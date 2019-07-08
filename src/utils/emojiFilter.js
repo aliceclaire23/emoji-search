@@ -1,4 +1,4 @@
-const emojiFilter = emojis => {
+const emojiFilter = (emojis, search) => {
   const uniqueSymbols = [];
   const filteredEmojis = [];
   emojis.forEach(emoji => {
@@ -7,7 +7,7 @@ const emojiFilter = emojis => {
       filteredEmojis.push(emoji);
     }
   });
-  return filteredEmojis;
+  return filteredEmojis.filter(emoji => emoji.keywords.includes(search));
 };
 
 export default emojiFilter;

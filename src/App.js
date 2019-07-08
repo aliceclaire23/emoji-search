@@ -16,7 +16,11 @@ class App extends React.Component {
           search={this.state.search}
           handleChange={this.handleChange}
         />
-        <EmojiDisplay emojis={this.state.emojis} search={this.state.search} />
+        <EmojiDisplay
+          emojis={this.state.emojis}
+          search={this.state.search}
+          copyEmoji={this.copyEmoji}
+        />
       </div>
     );
   }
@@ -28,11 +32,15 @@ class App extends React.Component {
     });
   };
 
-  // filterEmojis = () => {
-  //   this.setState(state => {
-  //     state.emojis.filter(emoji => emoji.keywords.includes(state.search));
-  //   });
-  // };
+  copyEmoji = event => {
+    const emojiToCopy = event.target;
+    const textArea = document.createElement('textarea');
+    textArea.value = emojiToCopy.textContent;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    textArea.remove();
+  };
 }
 
 export default App;
