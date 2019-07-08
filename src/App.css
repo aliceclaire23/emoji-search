@@ -46,6 +46,8 @@ span:hover {
   border: 10px;
   color: #262a2e;
   padding: 0 10px;
+  font-family: 'American Typewriter';
+  text-align: center;
 }
 
 @keyframes shake {
