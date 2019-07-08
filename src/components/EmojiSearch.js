@@ -1,10 +1,9 @@
 import React from 'react';
 
-const EmojiSearch = () => {
+const EmojiSearch = ({ search, handleChange }) => {
   return (
     <form>
-      <input id='search' type='text' />
-      <button type='submit'>Search</button>
+      <input onChange={handleChange} id='search' type='text' value={search} />
     </form>
   );
 };

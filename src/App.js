@@ -12,11 +12,27 @@ class App extends React.Component {
     return (
       <div className='App'>
         <Heading />
-        <EmojiSearch />
+        <EmojiSearch
+          search={this.state.search}
+          handleChange={this.handleChange}
+        />
         <EmojiDisplay emojis={this.state.emojis} search={this.state.search} />
       </div>
     );
   }
+
+  handleChange = event => {
+    const { id, value } = event.target;
+    this.setState({
+      [id]: value
+    });
+  };
+
+  // filterEmojis = () => {
+  //   this.setState(state => {
+  //     state.emojis.filter(emoji => emoji.keywords.includes(state.search));
+  //   });
+  // };
 }
 
 export default App;

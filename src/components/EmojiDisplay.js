@@ -2,7 +2,7 @@ import React from 'react';
 
 const EmojiDisplay = ({ emojis, search }) => {
   return (
-    <section>
+    <section className='emojis'>
       {emojis
         .filter(emoji => emoji.keywords.includes(search))
         .map((emoji, i) => (
