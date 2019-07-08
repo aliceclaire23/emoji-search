@@ -23,6 +23,10 @@ span {
   border-radius: 50%;
 }
 
+span:hover {
+  transform: translate(5px, -5px);
+}
+
 .emojis {
   width: 800px;
   display: flex;
